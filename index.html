@@ -63,6 +63,14 @@
       value++;
     }, 100);
 
+    replayButton.addEventListener("click", () => {
+      value = 0;
+
+      replayButton.className = "visually-hidden";
+      endMessage.className = "visually-hidden";
+      progressBar.className = "progress-bar progress-bar-striped progress-bar-animated bg-warning text-dark"
+
+    })
   </script>
 
 
