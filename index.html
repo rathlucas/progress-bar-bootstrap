@@ -18,22 +18,28 @@
   <h1 class="text-center mt-5 fw-bolder">Progress Bar no Bootstrap</h1>
 
   <div class="container
+     d-flex flex-column
+     justify-content-evenly
      mt-5 px-5
      border border border-dark rounded 
      shadow 
      bg-dark bg-opacity-50 text-light" style="min-height: 220px;">
 
 
-    <div class="progress mt-5 shadow-sm" style="height: 30px;">
-      <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning text-dark" style="width: 30%; height: 30px;">50%</div>
+    <div class="progress mt-2 shadow-sm" style="height: 40px;">
+      <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning text-dark" style="width: 30%; height: 40px;">50%</div>
     </div>
 
     <h2 id="message" class="visually-hidden">Obrigado por aguardar a barra carregar até 100% :D</h2>
+    
+    <button class="btn btn-warning align-self-center mt-2 visually-hidden">Carregar Novamente</button>
   </div>
+
 
 
   <script>
     const progressBar = document.querySelector(".progress-bar");
+    const replayButton = document.querySelector(".btn");
     const endMessage = document.getElementById("message");
 
     let value = 0;
@@ -46,6 +52,7 @@
 
         progressBar.className = "progress-bar bg-warning text-dark";
         endMessage.className = "text-center mt-5";
+        replayButton.className = "btn btn-warning align-self-center mt-2";
 
         clearInterval();
       }
